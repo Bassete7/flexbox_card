@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox responsive cards</title>
+</head>
+
+<style>
+    *,::before,::after{
+        padding: 0;
+        margin: 0;
+        box-sizing: inherit;
+    }
+    html{
+        font-size: 62.5%;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        box-sizing: border-box;
+    }
+    img{
+        width: 100%;
+        display: block;
+    }
+    .container{
+        padding-block: 3rem;
+    }
+    .container .primary__title{
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+    .container .container__card{
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    }
+    .container .container__card p{
+        font-size: 1.3rem;
+        color: rgb(58, 58, 58);
+    }
+    .container .container__card .container__card-content{
+        padding: 2rem;
+    }
+    .container__card-content .secondary__title{
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    .container__card-content .stars i{
+        color: rgb(245, 126, 7);
+    }
+    .container__card-content .text{
+        margin-block: 1rem;
+    }
+    .container__card-content .article__footer{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .container__card-content .article__footer .btn{
+        padding: .7rem 2.5rem;
+        border: none;
+        border-radius: .3rem;
+        background-color: #07bb01;
+        color: white;
+        letter-spacing: 1px;
+        cursor: pointer;
+    }
+
+    .container .flex__wrapper{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+
+    @media screen and (min-width: 769px) {  
+        .container .flex__wrapper{
+            flex-direction: row;
+        }
+        .container .container__card{
+            flex-basis: calc(50% - 3rem);  /*50% because we want 2 inline -3rem because in order for 2 to fit we have to subtract the gap that we added to flex*/
+        }
+        .container .container__card:nth-of-type(even){
+            display: flex;
+            flex-direction: column-reverse;
+            box-shadow: 0 0px 2px rgba(0, 0, 0, 0.3);
+        }
+    }
+    @media screen and (min-width: 1200px) {  
+        .container .container__card{
+            flex-basis: calc(25% - 5rem);
+        }
+        .container .container__card:nth-of-type(even){
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        }
+    }
+</style>
+
+
+<body>
+    <div class="container">
+        <h1 class="primary__title">Recommended Article</h1>
+        <div class="flex__wrapper">
+            <article class="container__card">
+                <div class="container__card-image">
+                    <img src="./images/img1.jpg" alt="image 1">
+                </div>
+                <div class="container__card-content">
+                    <h3 class="secondary__title">Article 1</h3>
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                        <label>8 Rating</label>
+                    </div>
+                    <p class="text">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, vero.
+                    </p>
+                    <div class="article__footer">
+                        <p>
+                            <i class="fa-solid fa-map"></i>
+                            San Franciso, CA
+                        </p>
+                        <button class="btn">Read</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="container__card">
+                <div class="container__card-image">
+                    <img src="./images/img2.jpg" alt="image 1">
+                </div>
+                <div class="container__card-content">
+                    <h3 class="secondary__title">Article 1</h3>
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                        <label>8 Rating</label>
+                    </div>
+                    <p class="text">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, vero.
+                    </p>
+                    <div class="article__footer">
+                        <p>
+                            <i class="fa-solid fa-map"></i>
+                            San Franciso, CA
+                        </p>
+                        <button class="btn">Read</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="container__card">
+                <div class="container__card-image">
+                    <img src="./images/img3.jpg" alt="image 1">
+                </div>
+                <div class="container__card-content">
+                    <h3 class="secondary__title">Article 1</h3>
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                        <label>8 Rating</label>
+                    </div>
+                    <p class="text">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, vero.
+                    </p>
+                    <div class="article__footer">
+                        <p>
+                            <i class="fa-solid fa-map"></i>
+                            San Franciso, CA
+                        </p>
+                        <button class="btn">Read</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="container__card">
+                <div class="container__card-image">
+                    <img src="./images/img4.jpg" alt="image 1">
+                </div>
+                <div class="container__card-content">
+                    <h3 class="secondary__title">Article 1</h3>
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                        <label>8 Rating</label>
+                    </div>
+                    <p class="text">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, vero.
+                    </p>
+                    <div class="article__footer">
+                        <p>
+                            <i class="fa-solid fa-map"></i>
+                            San Franciso, CA
+                        </p>
+                        <button class="btn">Read</button>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+
+
+
+
+
+    <script src="https://kit.fontawesome.com/70f6be0a09.js" crossorigin="anonymous"></script>
+</body>
+</html>
